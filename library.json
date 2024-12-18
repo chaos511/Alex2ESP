@@ -1,0 +1,59 @@
+{
+    "name": "Alex2ESP",
+    "version": "1.0.0",
+    "description": "A companion library for the Alex2MQTT Alexa Skill. Connects ESP-based devices to alex2mqtt.stormysdream.club for seamless integration with MQTT.",
+    "keywords": [
+        "alexa",
+        "mqtt",
+        "esp",
+        "voice assistant",
+        "home automation"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/chaos511/Alex2ESP"
+    },
+    "authors": [
+        {
+            "name": "David",
+            "email": "Alex2ESP@stormysdream.club",
+            "maintainer": true
+        }
+    ],
+    "license": "MIT",
+    "frameworks": [
+        "arduino"
+    ],
+    "platforms": [
+        "espressif8266",
+        "espressif32"
+    ],
+    "examples": [
+        "examples/*"
+    ],
+    "dependencies": [
+        {
+            "owner": "marvinroger",
+            "name": "AsyncMqttClient",
+            "version": "^0.9.0"
+        },
+        {
+            "owner":"me-no-dev",
+            "name": "ESPAsyncTCP",
+            "version": ">=1.2.2",
+            "platforms": "espressif8266"
+        },
+        {
+            "owner":"me-no-dev",
+            "name": "AsyncTCP",
+            "version": ">=1.1.1",
+            "platforms": "espressif32"
+        },
+        {
+            "owner": "bblanchon",
+            "name": "ArduinoJson",
+            "version": "^7.2.1"
+        }
+    ],
+    "headers": "Alex2ESP"
+}
