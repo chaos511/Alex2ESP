@@ -65,7 +65,10 @@ public:
         String value = (powerController == PowerController::ON) ? "ON" : "OFF";
         return AddProperty(AlexaInterfaceType::POWER_CONTROLLER, "powerState", value, uncertaintyInMs);
     }
-
+    AlexaStatusMessage &AddBrightnessControllerProp(unsigned int brightness, unsigned int uncertaintyInMs = 0)
+    {
+        return AddProperty(AlexaInterfaceType::BRIGHTNESS_CONTROLLER, "brightness", brightness, uncertaintyInMs);
+    }
     AlexaStatusMessage &AddToggleControllerProp(PowerController powerController,String instanceName, unsigned int uncertaintyInMs = 0)
     {
         String value = (powerController == PowerController::ON) ? "ON" : "OFF";

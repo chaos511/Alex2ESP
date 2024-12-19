@@ -33,7 +33,7 @@ First create an instance of the alexa client and initilize it with your MQTT Cre
 Alex2ESP alexClient;
 ```
 
-Credentials can be found at https://alex2mqtt.stormysdream.club/ after logging in with amazin
+Credentials can be found at https://alex2mqtt.stormysdream.club/ after logging in with amazon.
 ```cpp
   alexClient.begin(ALEXA_USERNAME, ALEXA_PASSWORD, ALEXA_ROOT_TOPIC);
 ```
@@ -97,7 +97,7 @@ toggleController->addActionMapping(openMapping);
 | Alexa Interface Type                                 | Status      |
 |-----------------------------------------------------|-------------|
 | AlexaInterfaceType::AUTOMATION_MANAGEMENT           | Supported*  |
-| AlexaInterfaceType::BRIGHTNESS_CONTROLLER           | Supported*  |
+| AlexaInterfaceType::BRIGHTNESS_CONTROLLER           | Fully Supported  |
 | AlexaInterfaceType::CHANNEL_CONTROLLER              | Supported*  |
 | AlexaInterfaceType::COLOR_CONTROLLER                | Supported*  |
 | AlexaInterfaceType::COLOR_TEMPERATURE_CONTROLLER    | Supported*  |
