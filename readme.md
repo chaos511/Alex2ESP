@@ -109,7 +109,6 @@ toggleController->addActionMapping(openMapping);
 | AlexaInterfaceType::BRIGHTNESS_CONTROLLER           | Fully Supported  |
 | AlexaInterfaceType::TOGGLE_CONTROLLER               | Fully Supported  |
 | AlexaInterfaceType::TEMPERATURE_SENSOR              | Fully Supported  |
-
 | AlexaInterfaceType::AUTOMATION_MANAGEMENT           | Supported*  |
 | AlexaInterfaceType::CHANNEL_CONTROLLER              | Supported*  |
 | AlexaInterfaceType::COLOR_CONTROLLER                | Supported*  |
