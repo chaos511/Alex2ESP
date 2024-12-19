@@ -1,22 +1,30 @@
 # Alex2ESP
 
-Alex2ESP is a lightweight C++ library for integrating ESP8266 and ESP32 microcontrollers with Amazon Alexa smart home APIs. The library simplifies the process of creating Alexa-compatible devices using MQTT. 
+Alex2ESP is a lightweight Arduino/PlatformIO library for integrating ESP8266 and ESP32 microcontrollers with Amazon Alexa smart home APIs. The library simplifies the process of creating Alexa-compatible devices using MQTT. 
 
-For more details on how to configure Alex2ESP, visit [Alex2ESP Documentation](https://alex2mqtt.stormysdream.club/).
+For more details on how to configure Alex2ESP, visit [Alex2MQTT Documentation](https://alex2mqtt.stormysdream.club/).
 
 ---
 
+
+
 ## Features
-- Supports various Alexa smart home capabilities.
-- Provides action mapping for advanced customization.
-- Simple integration with Wi-Fi and MQTT.
+- Supports "All" Alexa smart home capabilities.
+- Provides action mapping for advanced directive customization including Open,Close,Raise,and Lower commands.
+- Allows custom JSON injection in both discovery and state reporting to allow for unsupported devices.
 - Event-driven architecture for handling Alexa directives.
+---
+
+## Alternatives
+
+  one of the most popular library for controlling esp like devices using alexa is [FauxmoESP]{https://github.com/vintlabs/fauxmoESP} 
+  however FauxmoESP works by emulating a light bulb so it is limited in what commands it accepts.
 
 ---
 
 ## Quick Start
 ### Installation
-Download the library and include it in your Arduino IDE project:
+Download the library as zip or via PlatformIO and include it in your project:
 ```cpp
 #include <Alex2ESP.h>
 ```
@@ -96,15 +104,17 @@ toggleController->addActionMapping(openMapping);
 ## Interface Types
 | Alexa Interface Type                                 | Status      |
 |-----------------------------------------------------|-------------|
-| AlexaInterfaceType::AUTOMATION_MANAGEMENT           | Supported*  |
+| AlexaInterfaceType::ENDPOINT_HEALTH                 | Fully Supported  |
+| AlexaInterfaceType::POWER_CONTROLLER                | Fully Supported  |
 | AlexaInterfaceType::BRIGHTNESS_CONTROLLER           | Fully Supported  |
+| AlexaInterfaceType::TOGGLE_CONTROLLER               | Fully Supported  |
+| AlexaInterfaceType::TEMPERATURE_SENSOR              | Fully Supported  |
+
+| AlexaInterfaceType::AUTOMATION_MANAGEMENT           | Supported*  |
 | AlexaInterfaceType::CHANNEL_CONTROLLER              | Supported*  |
 | AlexaInterfaceType::COLOR_CONTROLLER                | Supported*  |
 | AlexaInterfaceType::COLOR_TEMPERATURE_CONTROLLER    | Supported*  |
 | AlexaInterfaceType::CONTACT_SENSOR                  | Supported*  |
-| AlexaInterfaceType::POWER_CONTROLLER                | Fully Supported  |
-| AlexaInterfaceType::ENDPOINT_HEALTH                 | Supported*  |
-| AlexaInterfaceType::TOGGLE_CONTROLLER               | Fully Supported  |
 | AlexaInterfaceType::APPLICATION_STATE_REPORTER      | Supported*  |
 | AlexaInterfaceType::AUDIO_PLAY_QUEUE                | Supported*  |
 | AlexaInterfaceType::AUTHORIZATION_CONTROLLER        | Supported*  |
@@ -146,7 +156,6 @@ toggleController->addActionMapping(openMapping);
 | AlexaInterfaceType::SMART_VISION_SNAPSHOT_PROVIDER  | Supported*  |
 | AlexaInterfaceType::SPEAKER                         | Supported*  |
 | AlexaInterfaceType::STEP_SPEAKER                    | Supported*  |
-| AlexaInterfaceType::TEMPERATURE_SENSOR              | Supported*  |
 | AlexaInterfaceType::THERMOSTAT_CONTROLLER           | Supported*  |
 | AlexaInterfaceType::THERMOSTAT_CONTROLLER_CONFIGURATION | Supported* |
 | AlexaInterfaceType::THERMOSTAT_CONTROLLER_HVAC_COMPONENTS | Supported* |

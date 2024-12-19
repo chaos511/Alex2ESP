@@ -18,6 +18,11 @@ enum class PowerController
     ON,
     OFF
 };
+enum class TemperatureSensorScale
+{
+    CELSIUS,
+    FAHRENHEIT
+};
 
 class AlexaStatusMessage
 {
@@ -65,6 +70,18 @@ public:
         String value = (powerController == PowerController::ON) ? "ON" : "OFF";
         return AddProperty(AlexaInterfaceType::POWER_CONTROLLER, "powerState", value, uncertaintyInMs);
     }
+
+    AlexaStatusMessage &AddTemperatureSensorProp(TemperatureSensorScale tempSensor,float value, unsigned int uncertaintyInMs = 0)
+    {
+        JsonDocument tempValue;
+        tempValue["scale"] = "CELSIUS";
+        tempValue["value"] = value;
+        if((tempSensor == TemperatureSensorScale::FAHRENHEIT)){
+            tempValue["value"] = (value - 32) * 5.0 / 9.0;
+        }
+        return AddProperty(AlexaInterfaceType::TEMPERATURE_SENSOR, "temperature", tempValue.as<JsonObject>(), uncertaintyInMs);
+    }
+
     AlexaStatusMessage &AddBrightnessControllerProp(unsigned int brightness, unsigned int uncertaintyInMs = 0)
     {
         return AddProperty(AlexaInterfaceType::BRIGHTNESS_CONTROLLER, "brightness", brightness, uncertaintyInMs);

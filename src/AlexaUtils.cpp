@@ -1,6 +1,6 @@
 #include "AlexaUtils.h"
 
-#define Alex2ESP_DEBUG
+// #define Alex2ESP_DEBUG
 
 uint8_t AlexaUtils::nextMessageId = 0;
 

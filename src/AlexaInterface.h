@@ -481,6 +481,9 @@ case AlexaInterfaceType::ENDPOINT_HEALTH:
     return {"connectivity"};
 case AlexaInterfaceType::TOGGLE_CONTROLLER:
     return {"toggleState"};
+case AlexaInterfaceType::TEMPERATURE_SENSOR:
+    return {"temperature"};
+
 case AlexaInterfaceType::APPLICATION_STATE_REPORTER:
 case AlexaInterfaceType::AUDIO_PLAY_QUEUE:
 case AlexaInterfaceType::AUTHORIZATION_CONTROLLER:
@@ -522,7 +525,6 @@ case AlexaInterfaceType::SMART_VISION_OBJECT_DETECTION_SENSOR:
 case AlexaInterfaceType::SMART_VISION_SNAPSHOT_PROVIDER:
 case AlexaInterfaceType::SPEAKER:
 case AlexaInterfaceType::STEP_SPEAKER:
-case AlexaInterfaceType::TEMPERATURE_SENSOR:
 case AlexaInterfaceType::THERMOSTAT_CONTROLLER:
 case AlexaInterfaceType::THERMOSTAT_CONTROLLER_CONFIGURATION:
 case AlexaInterfaceType::THERMOSTAT_CONTROLLER_HVAC_COMPONENTS:
