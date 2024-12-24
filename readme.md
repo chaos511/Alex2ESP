@@ -17,7 +17,7 @@ For more details on how to configure Alex2ESP, visit [Alex2MQTT Documentation](h
 
 ## Alternatives
 
-  one of the most popular library for controlling esp like devices using alexa is [FauxmoESP]{https://github.com/vintlabs/fauxmoESP} 
+  one of the most popular library for controlling esp like devices using alexa is [FauxmoESP](https://github.com/vintlabs/fauxmoESP) 
   however FauxmoESP works by emulating a light bulb so it is limited in what commands it accepts.
 
 ---
