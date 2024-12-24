@@ -86,6 +86,10 @@ public:
     {
         return AddProperty(AlexaInterfaceType::BRIGHTNESS_CONTROLLER, "brightness", brightness, uncertaintyInMs);
     }
+    AlexaStatusMessage &AddColorTemperatureControllerProp(unsigned int colorTemperature, unsigned int uncertaintyInMs = 0)
+    {
+        return AddProperty(AlexaInterfaceType::COLOR_TEMPERATURE_CONTROLLER, "colorTemperatureInKelvin", colorTemperature, uncertaintyInMs);
+    }
     AlexaStatusMessage &AddToggleControllerProp(PowerController powerController,String instanceName, unsigned int uncertaintyInMs = 0)
     {
         String value = (powerController == PowerController::ON) ? "ON" : "OFF";
